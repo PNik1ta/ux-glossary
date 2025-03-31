@@ -8,7 +8,7 @@ services:
     ports:
       - 5432:5432
     volumes:
-      - ./postgres-data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
     networks:
       - ux_glossary
     deploy:
@@ -31,8 +31,6 @@ services:
       - POSTGRES_HOST=postgres
     ports:
       - 5000:5000
-    volumes: 
-      - ./uploads:/app/uploads
     networks:
       - ux_glossary
 
@@ -42,3 +40,4 @@ networks:
 
 volumes: 
   ux_glossary:
+  postgres_data:
