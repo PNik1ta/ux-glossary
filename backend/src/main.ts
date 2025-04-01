@@ -13,10 +13,10 @@ async function bootstrap() {
   });
 
   const config = new DocumentBuilder()
-    .setTitle('OneBiz')
-    .setDescription('OneBiz API description')
+    .setTitle('Ux-glossary')
+    .setDescription('Ux-glossary API description')
     .setVersion('1.0')
-    .addTag('onebiz')
+    .addTag('ux-glossary')
     .addBearerAuth(
       {
         type: 'http',

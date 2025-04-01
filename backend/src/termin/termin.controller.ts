@@ -99,11 +99,11 @@ export class TerminController {
 		description: 'All termins by search',
 		type: BaseResponse<Termin[]>,
 	})
-	@Get('find-by-search/:search')
+	@Get('find-by-search')
 	@ApiBearerAuth('JWT-auth')
 	@HttpCode(200)
 	@Public()
-	async findAll(@Param('search') search: string): Promise<BaseResponse<Termin[]>> {
+	async findAll(@Query('search') search: string): Promise<BaseResponse<Termin[]>> {
 		try {
 			return await this.terminService.findBySearch(search);
 		} catch (err) {

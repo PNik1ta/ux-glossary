@@ -16,13 +16,14 @@ export class TerminRepository {
 	}
 
 	async findBySearch(search: string): Promise<Termin[]> {
-		if (!search?.trim()) {
+		if (!search?.trim() || typeof search === null || typeof search === undefined) {
 			return this.terminRepository.find()
 		}
 
 		return this.terminRepository.findBy({
 			title: ILike(`%${search}%`)
-		 })}
+		})
+	}
 
 	async findById(id: number): Promise<Termin> {
 		return this.terminRepository.findOneBy({ id });
@@ -38,12 +39,12 @@ export class TerminRepository {
 
 	async findByIds(ids: number[]): Promise<Termin[]> {
 		if (!ids || ids.length === 0) {
-		  return []
+			return []
 		}
-	
+
 		return this.terminRepository.findBy({ id: In(ids) });
-	 }
-	 
+	}
+
 
 	async delete(id: number): Promise<void> {
 		await this.terminRepository.delete(id);

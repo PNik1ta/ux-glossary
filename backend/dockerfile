@@ -27,7 +27,7 @@ COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/dist ./dist
 
 # Устанавливаем production-зависимости (сборку уже сделали в builder)
-RUN npm install --force
+RUN npm install --legacy-peer-deps
 
 # Открываем порт 5000
 EXPOSE 5000
