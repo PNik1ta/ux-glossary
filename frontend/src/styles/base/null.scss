@@ -1,0 +1,51 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+ }
+ 
+ ul, ol {
+	list-style: none;
+ }
+ 
+ a {
+	text-decoration: none;
+	color: inherit;
+ }
+ 
+ button, input, textarea {
+	outline: none;
+	border: none;
+	background: none;
+	font-family: inherit;
+ }
+ 
+ button {
+	cursor: pointer;
+	display: inline-block;
+ }
+ 
+ h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+ }
+ 
+
+ :focus {
+	outline: none;
+ }
+ 
+ img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+ }
+ 
+ input, textarea {
+	font-size: inherit;
+	color: inherit;
+ }
+ 
+ *, *::before, *::after {
+	box-sizing: inherit;
+ }
+ 

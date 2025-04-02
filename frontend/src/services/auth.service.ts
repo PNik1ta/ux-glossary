@@ -11,6 +11,8 @@ interface Tokens {
 export const AuthService = {
   async login(dto: ILoginUserDto): Promise<Tokens> {
     const res = await api.post<Tokens>('/auth/login', dto);
+    localStorage.setItem('rt', res.data.refresh_token);
+    localStorage.setItem('at', res.data.access_token); // добавляем это
     return res.data;
   },
 

@@ -1,0 +1,166 @@
+@import "../../../styles/abstracts/mixins.scss";
+@import "../../../styles/abstracts/variables.scss";
+
+.header {
+  background-color: $light-color;
+  border-bottom: 1px solid $border-color;
+  padding: 1.5rem 2.5rem;
+  font-family: $font-family;
+
+  @include phone {
+    padding: 1rem 1.5rem;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+
+  @include phone {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.logo {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: $primary-color;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+
+  text-shadow: 0 8px 20px rgba(0, 127, 204, 0.15);
+  &:hover {
+    opacity: 0.9;
+  }
+
+  @include phone {
+    font-size: 2.2rem;
+    text-align: center;
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  font-size: 2rem;
+  font-weight: 500;
+
+  @include phone {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+  }
+}
+
+.link {
+  color: $text-color;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: $primary-color;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+  }
+
+  &:hover {
+    color: $primary-color;
+
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.buttonOutline,
+.buttonFilled {
+  padding: 0.65rem 1.4rem;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  text-decoration: none;
+  
+  box-shadow: 0 8px 20px rgba(0, 127, 204, 0.15);
+  transition: all 0.2s ease;
+
+  @include phone {
+    font-size: 1.1rem;
+  }
+
+  @include small-phone {
+    font-size: 1rem;
+    padding: 0.5rem 1.1rem;
+  }
+}
+
+.buttonOutline {
+  border: 2px solid $primary-color;
+  color: $primary-color;
+  background-color: transparent;
+
+
+  &:hover {
+    background-color: $primary-color;
+    color: $light-color;
+  }
+}
+
+.buttonFilled {
+  background-color: $primary-color;
+  color: $light-color;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+}
+
+.profile {
+  color: $primary-color;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $secondary-color;
+  }
+
+  @include phone {
+    justify-content: center;
+  }
+}
+
+.logoutBtn {
+	background: none;
+	border: none;
+	color: $primary-color;
+	cursor: pointer;
+	transition: color 0.2s ease;
+ 
+	&:hover {
+	  color: $secondary-color;
+	}
+ }
+ 

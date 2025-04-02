@@ -1,0 +1,80 @@
+@import "../../../styles/abstracts/mixins.scss";
+@import "../../../styles/abstracts/variables.scss";
+
+.about {
+  background-color: $light-color;
+  padding: 8rem 2rem;
+  text-align: center;
+
+  @include phone {
+    padding: 5rem 1.5rem;
+  }
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description {
+  font-size: 2rem;
+  font-weight: 700;
+  color: $text-color;
+  margin-bottom: 5rem;
+  line-height: 1.5;
+  max-width: 800px;
+
+  @include phone {
+    font-size: 1.6rem;
+    margin-bottom: 4rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3.5rem;
+
+  @include laptop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include phone {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: $text-color;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  span {
+    max-width: 14ch;
+    line-height: 1.4;
+  }
+}
+
+.icon {
+  color: $primary-color;
+  width: 48px;
+  height: 48px;
+  transition: color 0.2s ease;
+
+  .item:hover & {
+    color: $secondary-color;
+  }
+}

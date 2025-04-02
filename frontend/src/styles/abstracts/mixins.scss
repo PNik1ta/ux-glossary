@@ -1,0 +1,50 @@
+@mixin min($size) {
+	@media (min-width: #{$size}px) {
+	  @content;
+	}
+ }
+ 
+ @mixin max($size) {
+	@media (max-width: #{$size}px) {
+	  @content;
+	}
+ }
+ 
+
+ @mixin phone {
+	@include max(576) {
+	  @content;
+	}
+ }
+ 
+
+ @mixin small-phone {
+	@include max(400) {
+	  @content;
+	}
+ }
+ 
+ @mixin tablet {
+	@media (max-width: 1024px) and (min-width: 768px) {
+	  @content;
+	}
+}
+ 
+ @mixin laptop {
+	@include max(1024) {
+	  @content;
+	}
+ }
+ 
+ @mixin desktop {
+	@include max(1440) {
+	  @content;
+	}
+ }
+ 
+ @mixin retina {
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+	  @content;
+	}
+ }
+ 

@@ -3,10 +3,6 @@ import { AuthService } from './auth.service';
 
 let accessToken = '';
 
-export const setAccessToken = (token: string) => {
-  accessToken = token;
-};
-
 export const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api',
   headers: {
@@ -38,7 +34,7 @@ api.interceptors.response.use(
         if (!rt) throw new Error('No refresh token');
 
         const tokens = await AuthService.refresh({rt});
-        setAccessToken(tokens.access_token);
+        localStorage.setItem('at', tokens.access_token);
         localStorage.setItem('rt', tokens.refresh_token);
 
         // Применяем новый токен и повторяем запрос

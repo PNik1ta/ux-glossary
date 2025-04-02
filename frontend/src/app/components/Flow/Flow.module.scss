@@ -1,0 +1,94 @@
+@import "../../../styles/abstracts/mixins.scss";
+@import "../../../styles/abstracts/variables.scss";
+
+.flow {
+  background-color: $background-color;
+  padding: 7rem 2rem;
+  text-align: center;
+
+  @include phone {
+    padding: 5rem 1.5rem;
+  }
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: $text-color;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+
+  @include phone {
+    font-size: 2.5rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.6rem;
+  color: $text-color;
+  margin-bottom: 4rem;
+  line-height: 1.6;
+
+  @include phone {
+    font-size: 1.3rem;
+  }
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+
+  @include laptop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include phone {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: $text-color;
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: $light-color;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  span {
+    max-width: 14ch;
+    line-height: 1.4;
+  }
+}
+
+.icon {
+  color: $primary-color;
+  width: 48px;
+  height: 48px;
+  transition: color 0.2s ease;
+
+  .step:hover & {
+    color: $secondary-color;
+  }
+}

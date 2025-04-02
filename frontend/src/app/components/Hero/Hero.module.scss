@@ -1,0 +1,75 @@
+@import "../../../styles/abstracts/mixins.scss";
+@import "../../../styles/abstracts/variables.scss";
+
+.hero {
+  background-color: $background-color;
+  padding: 10rem 2rem 8rem;
+  text-align: center;
+
+  @include phone {
+    padding: 6rem 1.5rem 5rem;
+  }
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 1.15;
+  color: $text-color;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.5px;
+
+  span {
+    color: $primary-color;
+  }
+
+  @include phone {
+    font-size: 3rem;
+    line-height: 1.25;
+  }
+}
+
+.subtitle {
+  font-size: 1.8rem;
+  color: $text-color;
+  max-width: 800px;
+  margin-bottom: 3.5rem;
+  line-height: 1.6;
+
+  @include phone {
+    font-size: 1.4rem;
+    max-width: 100%;
+  }
+}
+
+.cta {
+  display: inline-block;
+  padding: 1.2rem 2.8rem;
+  background-color: $primary-color;
+  color: $light-color;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+
+  box-shadow: 0 8px 20px rgba(0, 127, 204, 0.15);
+
+  &:hover {
+    background-color: $secondary-color;
+    box-shadow: 0 8px 28px rgba(0, 95, 153, 0.2);
+  }
+
+  @include phone {
+    font-size: 1.3rem;
+    padding: 1rem 2.2rem;
+  }
+}

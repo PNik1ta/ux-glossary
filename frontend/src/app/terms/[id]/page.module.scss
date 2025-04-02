@@ -1,0 +1,49 @@
+@import "../../../styles/abstracts/mixins.scss";
+@import "../../../styles/abstracts/variables.scss";
+
+.wrapper {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 2rem;
+  font-size: 1.6rem;
+  color: $text-color;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.tag {
+  font-size: 1.3rem;
+  color: $primary-color;
+  margin-bottom: 2rem;
+}
+
+.block {
+  margin-bottom: 2.5rem;
+
+  h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.error {
+  text-align: center;
+  font-size: 1.8rem;
+  color: red;
+  margin-top: 4rem;
+}

@@ -1,4 +1,5 @@
 import { IUserFavorites } from '../core/interfaces/user-favorites.interface';
+import { ICreateUserFavoteDto } from '../dto/user-favorite/create-user-favorite.dto';
 import { api } from './api';
 
 interface BaseResponse<T> {
@@ -18,8 +19,8 @@ export const UserFavoriteService = {
     return res.data
   },
 
-  async create(data: IUserFavorites): Promise<BaseResponse<IUserFavorites>> {
-    const res = await api.post<BaseResponse<IUserFavorites>>(`/user-favorite`, data);
+  async create(dto: ICreateUserFavoteDto): Promise<BaseResponse<IUserFavorites>> {
+    const res = await api.post<BaseResponse<IUserFavorites>>(`/user-favorite`, dto);
     return res.data;
   },
 

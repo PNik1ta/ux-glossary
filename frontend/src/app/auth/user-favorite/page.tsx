@@ -38,7 +38,7 @@ export default function UserFavoritesPage() {
 		]);
 		setFavorites(favRes.data);
 		setUsers(userRes.data);
-		setTermins(terminRes.data);
+		setTermins(terminRes.data!);
 		setLoading(false);
 	};
 
