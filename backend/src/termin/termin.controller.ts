@@ -160,9 +160,9 @@ export class TerminController {
 	@ApiBearerAuth('JWT-auth')
 	@HttpCode(200)
 	@Roles(ERoles.ADMIN, ERoles.USER)
-	async delete(@Param('id') id: number): Promise<BaseResponse<void>> {
+	async delete(@Param('id') id: number, @GetCurrentUserId() userId: number): Promise<BaseResponse<void>> {
 		try {
-			return await this.terminService.delete(id);
+			return await this.terminService.delete(id, userId);
 		} catch (err) {
 			if (err instanceof HttpException) {
 				throw err;

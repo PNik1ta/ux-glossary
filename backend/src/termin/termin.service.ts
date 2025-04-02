@@ -83,14 +83,14 @@ export class TerminService {
 		return new BaseResponse<Termin[]>('Termins found successfully', termins);
 	}
 
-	async delete(id: number): Promise<BaseResponse<void>> {
+	async delete(id: number, userId: number): Promise<BaseResponse<void>> {
 		const termin = await this.terminRepository.findById(id);
 
 		if (!termin) {
 			throw new Error('Could not find any termin');
 		}
 		
-		const user = await this.userRepository.findById(id);
+		const user = await this.userRepository.findById(userId);
 
 		if (!user) {
 			throw new Error('Could not find any user');
