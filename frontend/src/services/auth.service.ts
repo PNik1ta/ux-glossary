@@ -12,7 +12,7 @@ export const AuthService = {
   async login(dto: ILoginUserDto): Promise<Tokens> {
     const res = await api.post<Tokens>('/auth/login', dto);
     localStorage.setItem('rt', res.data.refresh_token);
-    localStorage.setItem('at', res.data.access_token); // добавляем это
+    localStorage.setItem('at', res.data.access_token);
     return res.data;
   },
 
@@ -23,10 +23,14 @@ export const AuthService = {
 
   async logout(): Promise<void> {
     await api.post('/auth/logout');
+    localStorage.removeItem('at')
+    localStorage.removeItem('rt')
   },
 
   async refresh(dto: IRefreshTokenDto): Promise<Tokens> {
     const res = await api.post<Tokens>('/auth/refresh', dto);
+    localStorage.setItem('rt', res.data.refresh_token);
+    localStorage.setItem('at', res.data.access_token);
     return res.data;
   },
 };

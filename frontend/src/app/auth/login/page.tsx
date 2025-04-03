@@ -4,7 +4,6 @@ import { Button, Form, Input, Typography, Alert } from 'antd';
 import { useRouter } from 'next/navigation';
 import { AuthService } from '@/services/auth.service';
 import { UserService } from '@/services/user.service';
-import { setAccessToken } from '@/services/api';
 import { ERoles } from '../../../core/enums/roles.enum';
 import { useState } from 'react';
 
@@ -16,9 +15,7 @@ export default function LoginPage() {
 
 	const onFinish = async (values: { email: string; password: string }) => {
 		try {
-			const tokens = await AuthService.login(values);
-			localStorage.setItem('rt', tokens.refresh_token);
-			setAccessToken(tokens.access_token);
+			await AuthService.login(values);			
 
 			const profile = await UserService.getProfile();
 			if (profile.data.role === ERoles.ADMIN) {
