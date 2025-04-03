@@ -1,5 +1,0 @@
-{
-	"buildCommand": "",
-	"startCommand": "docker-compose up --build"
- }
- 
