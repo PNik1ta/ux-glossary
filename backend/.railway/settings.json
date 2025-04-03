@@ -1,0 +1,7 @@
+{
+	"buildCommand": null,
+	"startCommand": null,
+	"rootDirectory": "backend",
+	"dockerfilePath": "Dockerfile"
+ }
+ 
