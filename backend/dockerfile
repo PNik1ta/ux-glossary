@@ -9,7 +9,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Устанавливаем зависимости с полной компиляцией (без кеша)
-RUN npm install --legacy-peer-deps
+RUN npm install --force
 
 # Копируем весь код в контейнер
 COPY . .
@@ -27,7 +27,7 @@ COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/dist ./dist
 
 # Устанавливаем production-зависимости (сборку уже сделали в builder)
-RUN npm install --legacy-peer-deps
+RUN npm install --force
 
 # Открываем порт 5000
 EXPOSE 5000
