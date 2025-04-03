@@ -7,7 +7,12 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
 
   app.enableCors({
-    origin: ['http://localhost:3000', 'http://www.localhost:3000'],
+    origin: [
+      'http://localhost:3000', 
+      'http://www.localhost:3000',
+      'https://ux-glossary-production.up.railway.app',
+      'https://www.ux-glossary-production.up.railway.app'
+    ],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
     credentials: true,
   });
