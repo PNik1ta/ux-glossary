@@ -4,7 +4,7 @@ import { AuthService } from './auth.service';
 let accessToken = '';
 
 export const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000/api',
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://ux-glossary-back-production.up.railway.app/api',
   headers: {
     'Content-Type': 'application/json',
   },
