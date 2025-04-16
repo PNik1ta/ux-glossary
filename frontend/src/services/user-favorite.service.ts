@@ -15,7 +15,7 @@ export const UserFavoriteService = {
   },
 
   async getFavoritesByUserId(): Promise<BaseResponse<IUserFavorites[]>> {
-    const res = await api.get<BaseResponse<IUserFavorites[]>>(`/user-favorites/get-favorites`)
+    const res = await api.get<BaseResponse<IUserFavorites[]>>(`/user-favorite/get-favorites`)
     return res.data
   },
 
