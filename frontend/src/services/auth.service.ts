@@ -18,6 +18,8 @@ export const AuthService = {
 
   async register(dto: IRegisterUserDto): Promise<Tokens> {
     const res = await api.post<Tokens>('/auth/register', dto);
+    localStorage.setItem('rt', res.data.refresh_token);
+    localStorage.setItem('at', res.data.access_token);
     return res.data;
   },
 
