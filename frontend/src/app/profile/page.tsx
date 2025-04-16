@@ -22,7 +22,7 @@ export default function ProfilePage() {
 
   const fetchAll = async () => {
 	try {
-	  const favs = await UserFavoriteService.getFavorites()
+	  const favs = await UserFavoriteService.getFavoritesByUserId()
 	  const favTerminIds = favs.data.map((f) => f.termin_id)
     if (favTerminIds.length !== 0) {
       const favTerminRes = await TerminService.findByIds(favTerminIds)
