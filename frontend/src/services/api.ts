@@ -1,8 +1,6 @@
 import axios from 'axios';
 import { AuthService } from './auth.service';
 
-let accessToken = '';
-
 export const api = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://ux-glossary-back-production.up.railway.app/api',
   headers: {
@@ -13,8 +11,9 @@ export const api = axios.create({
 
 // 👉 Подставляем access_token
 api.interceptors.request.use((config) => {
-  if (accessToken) {
-    config.headers.Authorization = `Bearer ${accessToken}`;
+  const token = localStorage.getItem('at'); // вместо глобального accessToken
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
   }
   return config;
 });

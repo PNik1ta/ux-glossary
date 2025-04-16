@@ -8,11 +8,11 @@ import { useRouter } from 'next/navigation'
 const { TabPane } = Tabs
 
 interface AuthModalProps {
-	open: boolean
-	onClose: () => void
-	onLoginSuccess: () => void
- }
- 
+  open: boolean
+  onClose: () => void
+  onLoginSuccess: () => void
+}
+
 
 export default function AuthModal({ open, onClose, onLoginSuccess }: AuthModalProps) {
   const router = useRouter()
@@ -24,7 +24,7 @@ export default function AuthModal({ open, onClose, onLoginSuccess }: AuthModalPr
       await AuthService.login(values)
       message.success('Успешный вход')
       onClose()
-		onLoginSuccess()
+      onLoginSuccess()
       router.refresh()
     } catch {
       message.error('Ошибка входа')
@@ -39,7 +39,7 @@ export default function AuthModal({ open, onClose, onLoginSuccess }: AuthModalPr
       await AuthService.register(values)
       message.success('Успешная регистрация')
       onClose()
-		onLoginSuccess()
+      onLoginSuccess()
       router.refresh()
     } catch {
       message.error('Ошибка регистрации')
